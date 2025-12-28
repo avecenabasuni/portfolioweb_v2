@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Primary Meta Tags -->
+  <title>Avecena Basuni | Observability & Cloud Engineering Portfolio</title>
+  <meta name="title" content="Avecena Basuni | Observability & Cloud Engineering Portfolio" />
+  <meta name="description" content="Technical Product Specialist specializing in Observability, Cloud Infrastructure, and Site Reliability Engineering. Troubleshooting distributed systems and building reliability on AWS." />
+  <meta name="keywords" content="Avecena Basuni, DevOps, SRE, Cloud Engineer, Observability, AWS, New Relic, Kubernetes, Portfolio" />
+  <meta name="author" content="Avecena Basuni" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://avecenabasuni.my.id/" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://avecenabasuni.my.id/" />
+  <meta property="og:title" content="Avecena Basuni | Observability & Cloud Engineering" />
+  <meta property="og:description" content="Technical Product Specialist specializing in Observability, Cloud Infrastructure, and Site Reliability Engineering." />
+  <meta property="og:image" content="https://avecenabasuni.my.id/assets/images/og-image.png" />
+  <meta property="og:site_name" content="Avecena Basuni Portfolio" />
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://avecenabasuni.my.id/" />
+  <meta property="twitter:title" content="Avecena Basuni | Observability & Cloud Engineering" />
+  <meta property="twitter:description" content="Technical Product Specialist specializing in Observability, Cloud Infrastructure, and Site Reliability Engineering." />
+  <meta property="twitter:image" content="https://avecenabasuni.my.id/assets/images/og-image.png" />
+  
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Avecena Basuni",
+    "url": "https://avecenabasuni.my.id",
+    "jobTitle": "Technical Product Specialist",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "New Relic"
+    },
+    "sameAs": [
+      "https://linkedin.com/in/avecenabasuni",
+      "https://github.com/avecenabasuni",
+      "https://medium.com/@avecenabasuni"
+    ],
+    "knowsAbout": ["Observability", "Cloud Computing", "AWS", "Site Reliability Engineering", "DevOps"]
+  }
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/av.png" />
+  <link rel="apple-touch-icon" href="assets/images/av.png" />
+
+  <!-- Security: Content Security Policy -->
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' 'unsafe-inline' https://bam.nr-data.net https://js-agent.newrelic.com https://www.googletagmanager.com https://www.google-analytics.com;
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+    font-src 'self' https://fonts.gstatic.com;
+    img-src 'self' data: https: https://www.google-analytics.com https://www.googletagmanager.com;
+    connect-src 'self' https://bam.nr-data.net https://*.nr-data.net https://www.google-analytics.com https://analytics.google.com https://*.google-analytics.com;
+    frame-ancestors 'none';
+    base-uri 'self';
+    form-action 'self';
+  " />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="DENY" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+  <!-- Google Analytics (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3D8D7V7SW6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-3D8D7V7SW6');
+  </script>
+
+  <!-- New Relic Browser Agent (RUM) -->
+  <script src="js/vendor/newrelic.js" defer></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container nav__inner">
+      <a href="#" class="nav__brand" aria-label="Home">
+        <img src="assets/images/av.png" alt="AV Logo" class="nav__logo" width="32" height="32" loading="lazy" />
+        <span class="nav__name">Avecena Basuni</span>
+      </a>
+
+      <div class="nav__links" id="nav-menu">
+        <a href="#work" class="nav__link">Work</a>
+        <a href="#vault" class="nav__link">Vault</a>
+        <a href="#skills" class="nav__link">Skills</a>
+        <a href="#about" class="nav__link">About</a>
+      </div>
+
+      <div class="nav__actions">
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle color theme"
+          aria-pressed="false">
+          <div class="theme-toggle__track">
+            <div class="theme-toggle__icons">
+              <svg class="theme-toggle__icon moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                fill="currentColor">
+                <path
+                  d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z" />
+              </svg>
+              <svg class="theme-toggle__icon sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                fill="currentColor">
+                <path
+                  d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z" />
+              </svg>
+            </div>
+            <div class="theme-toggle__thumb"></div>
+          </div>
+        </button>
+        <button class="nav__toggle" id="nav-toggle" type="button" aria-label="Toggle navigation"
+          aria-controls="nav-menu" aria-expanded="false">
+          <div class="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="container container--narrow">
+        <div class="hero__content">
+          <div class="hero__badge">
+            <span class="hero__badge-dot"></span>
+            Open to new opportunities
+          </div>
+
+          <img src="assets/images/avatar3.jpg" alt="Avecena Basuni" class="hero__avatar" width="72" height="72"
+            loading="eager" />
+
+          <h1 class="hero__title">
+            Observability & Cloud
+            <span class="hero__title-accent">Engineering</span>
+          </h1>
+
+          <p class="hero__subtitle">
+            Troubleshooting distributed systems & building reliability on AWS.
+          </p>
+
+          <div class="hero__cta">
+            <a href="#work" class="btn btn--primary">Selected Work</a>
+            <a href="assets/doc/resume.pdf" class="btn btn--secondary" download>
+              Download CV
+            </a>
+            <a href="#contact" class="btn btn--secondary">Contact Me</a>
+          </div>
+        </div>
+
+        <!-- Stats Row -->
+        <div class="stats" id="stats-container">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Selected Work -->
+    <section class="section" id="work">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Selected Work</h2>
+          <a href="https://github.com/avecenabasuni" target="_blank" rel="noopener" class="text-accent" style="
+                font-size: 0.875rem;
+                display: flex;
+                align-items: center;
+                gap: 4px;
+              ">
+            View GitHub
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z" />
+            </svg>
+          </a>
+        </div>
+
+        <div class="work-grid" id="projects-container">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- The Vault -->
+    <section class="section" id="vault">
+      <div class="container">
+        <div class="section-header">
+          <div class="flex gap-md" style="align-items: center">
+            <h2 class="section-title">The Vault</h2>
+            <span class="section-badge">Experiments & Labs</span>
+          </div>
+        </div>
+
+        <div class="vault-controls">
+          <div class="vault-filters" id="vault-filters">
+            <!-- Rendered by JS -->
+          </div>
+
+          <div class="vault-search">
+            <span class="vault-search__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+              </svg>
+            </span>
+            <input type="text" class="vault-search__input" id="vault-search" placeholder="Search vault..."
+              aria-label="Search vault items" />
+          </div>
+        </div>
+
+        <div class="vault-grid" id="vault-container">
+          <!-- Rendered by JS -->
+        </div>
+
+        <div class="vault-load-more hidden" id="vault-load-more">
+          <button class="btn btn--secondary">Load More</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Pillars -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="pillars-section">
+          <h2 class="section-title text-center" style="border: none; padding: 0; margin-bottom: 2rem">
+            Technical Pillars
+          </h2>
+          <div class="pillars-grid" id="pillars-container">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Writing -->
+    <section class="section" id="writing">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Writing</h2>
+          <a href="https://medium.com/@avecenabasuni" target="_blank" rel="noopener" class="text-muted" style="
+                font-size: 0.75rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+              ">
+            View All
+          </a>
+        </div>
+        <div class="writing-grid" id="writing-container">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications -->
+    <section class="section" id="certifications">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Certifications</h2>
+        </div>
+        <div class="certs-grid">
+          <a class="cert-featured reveal" id="cert-featured" href="https://www.credly.com/" target="_blank"
+            rel="noopener">
+            <!-- Rendered by JS -->
+          </a>
+          <div class="cert-mini-grid" id="cert-others">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience & About -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="exp-about-grid">
+          <!-- Experience -->
+          <div>
+            <h2 class="section-title" style="margin-bottom: 1.5rem">
+              Experience
+            </h2>
+            <div class="timeline" id="experience-container">
+              <!-- Rendered by JS -->
+            </div>
+          </div>
+
+          <!-- About -->
+          <div>
+            <h2 class="section-title" style="margin-bottom: 1.5rem">
+              About Me
+            </h2>
+            <div class="about-content reveal">
+              <p>
+                With a strong foundation in Electrical Engineering (UI Cum
+                Laude), I have evolved into a dedicated
+                <strong>DevOps & SRE practitioner</strong>. I bridge the gap
+                between complex infrastructure and reliable software delivery,
+                turning potential outages into non-events. I build systems
+                that sleep well at night so you can too.
+              </p>
+              <div class="about-location">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                </svg>
+                Jakarta, Indonesia • Open to remote/relocation
+              </div>
+
+              <h4 class="philosophy-title">Work Philosophy</h4>
+              <div class="philosophy-list">
+                <div class="philosophy-item">
+                  <span class="philosophy-item__icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
+                    </svg>
+                  </span>
+                  <span class="philosophy-item__text">Documentation First</span>
+                </div>
+                <div class="philosophy-item">
+                  <span class="philosophy-item__icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8h16v10zm-2-1h-6v-2h6v2zM7.5 17l-1.41-1.41L8.67 13l-2.59-2.59L7.5 9l4 4-4 4z" />
+                    </svg>
+                  </span>
+                  <span class="philosophy-item__text">Automate Everything</span>
+                </div>
+                <div class="philosophy-item">
+                  <span class="philosophy-item__icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M6.32 13.01c.96.02 1.85.5 2.45 1.34A3.961 3.961 0 0 0 12 16c1.29 0 2.5-.62 3.23-1.66.6-.84 1.49-1.32 2.45-1.34-.72-1.22-3.6-2-5.68-2-2.07 0-4.96.78-5.68 2.01zM4 13c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm16 0c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-8-3c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3z" />
+                    </svg>
+                  </span>
+                  <span class="philosophy-item__text">Knowledge Sharing</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-cta reveal">
+          <div class="contact-cta__glow"></div>
+          <div class="contact-cta__content">
+            <h2 class="contact-cta__title">Ready to scale?</h2>
+            <p class="contact-cta__text">
+              Looking for DevOps, SRE, or Cloud Infrastructure roles.<br />
+              Available immediately.
+            </p>
+            <div class="contact-buttons">
+              <a href="mailto:avecenabasuni@gmail.com" class="contact-btn icon-link">
+                <span class="contact-btn__icon icon-surface" aria-hidden="true" style="color: var(--color-accent)">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                    fill="currentColor">
+                    <path
+                      d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                  </svg>
+                </span>
+                <span class="contact-btn__label">Email Me</span>
+              </a>
+              <a href="https://linkedin.com/in/avecenabasuni" target="_blank" rel="noopener"
+                class="contact-btn icon-link">
+                <span class="contact-btn__icon icon-surface" aria-hidden="true" style="color: var(--color-accent)">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                    fill="currentColor">
+                    <path
+                      d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+                  </svg>
+                </span>
+                <span class="contact-btn__label">LinkedIn</span>
+              </a>
+              <a href="https://wa.me/6281234567890" target="_blank" rel="noopener" class="contact-btn icon-link">
+                <span class="contact-btn__icon icon-surface" aria-hidden="true" style="color: var(--color-accent)">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                    fill="currentColor">
+                    <path
+                      d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01C17.18 3.03 14.68 2 12.04 2zM12.05 20.21c-1.5 0-2.97-.39-4.27-1.14l-.3-.18-3.11.82.83-3.03-.2-.31c-.82-1.31-1.26-2.83-1.26-4.38 0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42 1.56 1.56 2.41 3.63 2.41 5.83.02 4.54-3.68 8.21-8.16 8.21z" />
+                  </svg>
+                </span>
+                <span class="contact-btn__label">WhatsApp</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__copy">&copy; 2024 Avecena Basuni.</p>
+      <div class="footer__social-links">
+        <a href="https://github.com/avecenabasuni" target="_blank" rel="noopener" class="footer__social-icon icon-link"
+          aria-label="GitHub">
+          <span class="icon-surface" aria-hidden="true" style="color: var(--color-text)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2A10 10 0 002 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02a9.58 9.58 0 012.5-.34c.85.01 1.71.12 2.5.34 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z" />
+            </svg>
+          </span>
+        </a>
+        <a href="https://medium.com/@avecenabasuni" target="_blank" rel="noopener" class="footer__social-icon icon-link"
+          aria-label="Medium">
+          <span class="icon-surface" aria-hidden="true" style="color: var(--color-text)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z" />
+            </svg>
+          </span>
+        </a>
+        <a href="https://linkedin.com/in/avecenabasuni" target="_blank" rel="noopener"
+          class="footer__social-icon icon-link" aria-label="LinkedIn">
+          <span class="icon-surface" aria-hidden="true" style="color: var(--color-text)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Project Modal -->
+  <div class="modal-overlay" id="modal-overlay" aria-hidden="true">
+    <div class="modal" id="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <header class="modal__header">
+        <div class="modal__header-top">
+          <div>
+            <h2 class="modal__title" id="modal-title">Project Title</h2>
+            <span class="modal__status" id="modal-status">Deployed</span>
+          </div>
+          <button class="modal__close" id="modal-close" aria-label="Close modal">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+            </svg>
+          </button>
+        </div>
+        <p class="modal__subtitle" id="modal-subtitle">
+          Project summary goes here.
+        </p>
+      </header>
+
+      <div class="modal__content">
+        <!-- Gallery -->
+        <div class="modal__gallery">
+          <div class="modal__gallery-main" id="modal-gallery-main">
+            <span style="color: var(--color-text-muted); font-size: 0.75rem">Main Screenshot</span>
+          </div>
+          <div id="modal-gallery-thumbs">
+            <div class="modal__gallery-thumb">Thumb 1</div>
+            <div class="modal__gallery-thumb">Thumb 2</div>
+          </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="modal__tabs">
+          <button class="modal__tab active" data-tab="impact">
+            Overview & Impact
+          </button>
+          <button class="modal__tab" data-tab="tech">Tech Stack</button>
+          <button class="modal__tab" data-tab="learnings">Learnings</button>
+        </div>
+
+        <!-- Tab Content: Impact -->
+        <div class="modal__tab-content active" data-tab-content="impact">
+          <h4 class="modal__section-title">The Challenge</h4>
+          <ul class="modal__list" id="modal-challenge">
+            <li>Challenge point 1</li>
+          </ul>
+
+          <h4 class="modal__section-title modal__section-title--accent">
+            The Outcome
+          </h4>
+          <ul class="modal__list" id="modal-impact">
+            <li>Impact point 1</li>
+          </ul>
+        </div>
+
+        <!-- Tab Content: Tech -->
+        <div class="modal__tab-content" data-tab-content="tech">
+          <div class="modal__tech-tags" id="modal-tech">
+            <span class="modal__tech-tag">Technology</span>
+          </div>
+        </div>
+
+        <!-- Tab Content: Learnings -->
+        <div class="modal__tab-content" data-tab-content="learnings">
+          <ul class="modal__list" id="modal-learnings">
+            <li>Learning point 1</li>
+          </ul>
+        </div>
+      </div>
+
+      <footer class="modal__footer">
+        <a href="#" class="btn btn--primary" id="modal-link-code" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z" />
+          </svg>
+          View Code
+        </a>
+        <a href="#" class="btn btn--secondary" id="modal-link-docs" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
+          </svg>
+          Read Docs
+        </a>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Certifications Modal -->
+  <div class="modal-overlay" id="cert-modal-overlay" aria-hidden="true">
+    <div class="modal" id="cert-modal" role="dialog" aria-modal="true" aria-labelledby="cert-modal-title">
+      <header class="modal__header">
+        <div class="modal__header-top">
+          <h2 class="modal__title" id="cert-modal-title">
+            All Certifications
+          </h2>
+          <button class="modal__close" id="cert-modal-close" aria-label="Close modal">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+            </svg>
+          </button>
+        </div>
+      </header>
+      <div class="modal__content">
+        <div class="cert-grid-full" id="cert-grid-full">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
+    <div class="lightbox__content">
+      <button class="lightbox__close" id="lightbox-close" aria-label="Close lightbox">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+        </svg>
+      </button>
+      <div class="lightbox__image" id="lightbox-image">
+        <span style="color: var(--color-text-muted)">Preview</span>
+      </div>
+      <div class="lightbox__info">
+        <h3 class="lightbox__title" id="lightbox-title">Item Title</h3>
+        <p class="lightbox__meta" id="lightbox-meta">
+          Category • Description
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>
