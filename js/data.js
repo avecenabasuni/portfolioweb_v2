@@ -448,7 +448,7 @@ const DATA = {
   // STATS (Hero section numbers)
   // ============================================
   stats: [
-    { value: 20, suffix: '+', label: 'Certifications', icon: 'verified', link: '#about' },
+    { value: 20, suffix: '+', label: 'Certifications', icon: 'verified', link: '#certifications' },
     { value: 10, suffix: '%', label: 'Ticket Reduction', icon: 'notifications_active', link: '#work' },
     { value: 50, suffix: '+', label: 'Students Trained', icon: 'group', link: '#about' },
     { value: 3, suffix: '+', label: 'Years Experience', icon: 'menu_book', link: '#about' }
