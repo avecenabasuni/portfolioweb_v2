@@ -298,15 +298,17 @@ const DATA = {
   */
   experience: [
     {
-      title: 'Associate Observability Engineer',
-      company: 'PT Astra Graphia Information Technology',
-      period: 'Apr 2024 - Present',
+      title: 'Technical Product Specialist',
+      company: 'PT Berca Hardayaperkasa',
+      period: 'Mar 2024 - Present',
       current: true,
       points: [
-        'Implemented New Relic observability across enterprise clients.',
-        'Developed custom NRQL dashboards reducing alert noise by 40%.',
-        'Automated infrastructure monitoring with Terraform.',
-        'Trained 50+ engineers on observability best practices.'
+        'Delivered technical trainings, increasing teams\' product knowledge by 10%.',
+        'Reduced support tickets by 10% through customer success strategies.',
+        'Led product demos and POC sessions to secure new deals.',
+        'Developed technical documentation (BOQ, HLD, LLD) and proposals.',
+        'Explored emerging technologies including cloud computing.',
+        'Implemented automation and platform collaboration solutions.'
       ]
     },
     {
@@ -318,7 +320,8 @@ const DATA = {
         'Designed and implemented secure, high-performance server systems.',
         'Managed Microsoft environments (Exchange, AD, SQL Server).',
         'Achieved high first-call resolution during 24/7 operations.',
-        'Developed disaster recovery plans for business continuity.'
+        'Developed disaster recovery plans for business continuity.',
+        'Actively learned AWS and GCP cloud platforms.'
       ]
     },
     {
@@ -329,7 +332,20 @@ const DATA = {
       points: [
         'Developed Arduino-based Syringe Pump for medical use.',
         'Designed intuitive user interfaces for medical devices.',
-        'Programmed microcontrollers in C/C++ for accurate fluid delivery.'
+        'Programmed microcontrollers in C/C++ for accurate fluid delivery.',
+        'Performed rigorous testing and debugging for reliability.'
+      ]
+    },
+    {
+      title: 'Electronics Laboratory Assistant',
+      company: 'Laboratorium Elektronika FTUI',
+      period: 'Aug 2021 - Jan 2023',
+      current: false,
+      points: [
+        'Designed practicum modules covering 10 key topics in embedded systems.',
+        'Provided hands-on assistance for 50+ students per semester.',
+        'Maintained lab equipment (oscilloscopes, power supplies, multimeters).',
+        'Assessed student lab reports and conducted safety briefings.'
       ]
     }
   ],
