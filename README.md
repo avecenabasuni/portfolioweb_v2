@@ -59,14 +59,6 @@ This site implements several security best practices:
 - **X-Content-Type-Options: nosniff** - Prevents MIME-type sniffing
 - **Referrer-Policy** - Limits referrer information leakage
 
-### New Relic Browser Agent
-
-The `js/vendor/newrelic.js` file contains a **browser license key** which is safe to publish:
-
-- It can only **send** data to New Relic (Real User Monitoring)
-- It cannot read, modify, or access your New Relic account data
-- This is by design for client-side monitoring
-
 ## License
 
 MIT
